@@ -14,17 +14,8 @@ class ProfileTabScreen extends StatefulWidget {
 class _ProfileTabScreenState extends State<ProfileTabScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Custom_Button(
-            title: "Logout",
-            onpressed: () {
-              fauth.signOut();
-              Get.offAll(LogIn());
-            },
-            color: Colors.lightGreenAccent,
-            textColor: Colors.black),
-      ),
+    return const Scaffold(
+      body: Center(child: Text("Profile")),
     );
   }
 }
