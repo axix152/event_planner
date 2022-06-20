@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
@@ -9,25 +10,45 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridTile(
-      child: Image.network(
-        image,
-        fit: BoxFit.cover,
-      ),
-      footer: GridTileBar(
-        backgroundColor: Colors.black87,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                textAlign: TextAlign.left,
-              ),
+    return Container(
+      height: 300.h,
+      width: double.infinity,
+      decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 75.h,
+            width: double.infinity,
+            child: Image.network(
+              image,
+              fit: BoxFit.fill,
             ),
-            Text("$price Rs"),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 7.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(2.h),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Text(
+                "$price Rs",
+                style: TextStyle(
+                  fontSize: 10.sp,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -7,8 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/progress_dialog.dart';
-
 class DetailScreen extends StatelessWidget {
   final String title;
   final String price;
@@ -33,18 +31,12 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     requestDetails() {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (BuildContext c) {
-          return const ProgressDialog(message: "Processing,Please wait...");
-        },
-      );
       Map request = {
         "id": userModel!.id,
         "name": userModel!.name,
         "email": userModel!.email,
       };
+      print(request);
       DatabaseReference ref =
           FirebaseDatabase.instance.ref().child("serviceProvider");
       ref

@@ -1,13 +1,12 @@
 import 'dart:async';
 
 import 'package:event_planner/global.dart';
+import 'package:event_planner/screens/assistant/assistant_model.dart';
 import 'package:event_planner/screens/main_screen.dart';
 import 'package:event_planner/screens/authentication/login.dart';
-import 'package:event_planner/screens/authentication/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../widgets/custom_Button.dart';
 import '../../const.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,8 +16,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   startTimer() {
-    // fauth.currentUser != null ? AssistantModel.readCurrentUserInfo() : null;
-    // fauth.currentUser != null ? AssistantModel.currentUserDetails() : null;
+    fauth.currentUser != null ? AssistantModel.readCurrentUserInfo() : null;
     Timer(const Duration(seconds: 4), () async {
       if (await fauth.currentUser != null) {
         Get.offAll(MainScreen());

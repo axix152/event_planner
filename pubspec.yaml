@@ -43,6 +43,7 @@ dependencies:
   firebase_database: ^9.0.15
   fluttertoast: ^8.0.9
   get: ^4.6.5
+  dcdg: ^4.0.1
 
 
 dev_dependencies:
